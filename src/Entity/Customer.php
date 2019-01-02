@@ -20,6 +20,7 @@ class Customer extends Model
     public function getModel(): array
     {
         return [
+            "id" => $this->getId(),
             "first_name" => $this->getFirstName(),
             "last_name" => $this->getLastName(),
             "address"=> $this->getAddress()

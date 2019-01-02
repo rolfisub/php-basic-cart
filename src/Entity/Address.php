@@ -20,6 +20,7 @@ class Address extends Model
     public function getModel(): array
     {
         return [
+            "id" => $this->getId(),
             "address_1" => $this->getAddress1(),
             "address_2" => $this->getAddress2(),
             "city" => $this->getCity(),
