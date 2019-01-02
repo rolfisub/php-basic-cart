@@ -1,0 +1,24 @@
+{
+    "name": "rolfisub/php-basic-cart",
+    "description": "Basic shopping cart functionality.",
+    "keywords": ["shopping", "cart", "e-commerce"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rolf Bansbach",
+            "email": "rolfisub@gmail.com"
+        }
+    ],
+    "type": "library",
+    "require": {
+		"php": ">=7.1"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rolfisub\\BasicCart\\": "src/"
+        }
+    }
+}
