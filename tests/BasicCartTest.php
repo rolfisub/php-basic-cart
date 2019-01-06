@@ -23,12 +23,12 @@ class BasicCartTest extends TestCase
         unset($var);
     }
 
-    /* public function testSomething()
-     {
-         $o = new \Rolfisub\BasicCart\BasicCart();
+    public function testSomething()
+    {
+        $o = new \Rolfisub\BasicCart\BasicCart();
+        $o->setOrder(new \Rolfisub\BasicCart\Entity\Order());
 
-
-         $o->getModel();
-     }*/
+        var_dump(json_encode($o->getModel()));
+    }
 
 }

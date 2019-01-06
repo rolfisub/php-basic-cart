@@ -20,12 +20,12 @@ class Item extends Model
      */
     public function getModel(): array
     {
-       return [
-           "id"=> $this->getId(),
-           "name"=> $this->getName(),
-           "quantity"=> $this->getQuantity(),
-           "price"=> $this->getPrice()
-       ];
+        return [
+            "id" => $this->getId(),
+            "name" => $this->getName(),
+            "quantity" => $this->getQuantity(),
+            "price" => $this->getPrice()
+        ];
     }
 
     /**
@@ -33,7 +33,7 @@ class Item extends Model
      */
     public function getName()
     {
-        return $this->name;
+        return $this->name !== null ? $this->name : $this->setName("")->getName();
     }
 
     /**
@@ -51,7 +51,7 @@ class Item extends Model
      */
     public function getQuantity()
     {
-        return $this->quantity;
+        return $this->quantity !== null ? $this->quantity : $this->setQuantity(0)->getQuantity();
     }
 
     /**
@@ -70,7 +70,7 @@ class Item extends Model
      */
     public function getPrice()
     {
-        return $this->price;
+        return $this->price !== null ? $this->price : $this->setPrice(0)->getPrice();
     }
 
     /**

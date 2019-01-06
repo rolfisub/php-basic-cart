@@ -14,6 +14,7 @@ class Customer extends Model
     private $first_name;
     private $last_name;
     private $address;
+
     /**
      * @return array
      */
@@ -23,7 +24,7 @@ class Customer extends Model
             "id" => $this->getId(),
             "first_name" => $this->getFirstName(),
             "last_name" => $this->getLastName(),
-            "address"=> $this->getAddress()
+            "address" => $this->getAddress()->getModel()
         ];
     }
 
@@ -32,7 +33,7 @@ class Customer extends Model
      */
     public function getFirstName()
     {
-        return $this->first_name;
+        return $this->first_name !== null ? $this->first_name : $this->setFirstName("")->getFirstName();
     }
 
     /**
@@ -50,7 +51,7 @@ class Customer extends Model
      */
     public function getLastName()
     {
-        return $this->last_name;
+        return $this->last_name !== null ? $this->last_name : $this->setLastName("")->getLastName();
     }
 
     /**
@@ -66,9 +67,9 @@ class Customer extends Model
     /**
      * @return mixed
      */
-    public function getAddress()
+    public function getAddress(): Address
     {
-        return $this->address;
+        return $this->address ? $this->address : $this->setAddress(new Address())->getAddress();
     }
 
     /**

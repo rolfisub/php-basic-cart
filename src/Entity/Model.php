@@ -18,7 +18,7 @@ abstract class Model
      */
     public function getId()
     {
-        return $this->id;
+        return $this->id !== null ? $this->id : $this->setId(0)->getId();
     }
 
     /**

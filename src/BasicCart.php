@@ -24,7 +24,7 @@ class BasicCart extends Model
     /**
      * @return Order
      */
-    public function getOrder(): Order
+    public function getOrder()
     {
         return $this->order;
     }

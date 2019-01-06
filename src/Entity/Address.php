@@ -36,15 +36,17 @@ class Address extends Model
      */
     public function getCountry()
     {
-        return $this->country;
+        return $this->country !== null ? $this->country : $this->setCountry("")->getCountry();
     }
 
     /**
-     * @param mixed $country
+     * @param $country
+     * @return $this
      */
-    public function setCountry($country): void
+    public function setCountry($country)
     {
         $this->country = $country;
+        return $this;
     }
 
     /**
@@ -52,15 +54,17 @@ class Address extends Model
      */
     public function getAddress1()
     {
-        return $this->address_1;
+        return $this->address_1 !== null ? $this->address_1 : $this->setAddress1("")->getAddress1();
     }
 
     /**
-     * @param mixed $address_1
+     * @param $address_1
+     * @return $this
      */
-    public function setAddress1($address_1): void
+    public function setAddress1($address_1)
     {
         $this->address_1 = $address_1;
+        return $this;
     }
 
     /**
@@ -68,7 +72,7 @@ class Address extends Model
      */
     public function getAddress2()
     {
-        return $this->address_2;
+        return $this->address_2 !== null ? $this->address_2 : $this->setAddress2("")->getAddress2();
     }
 
     /**
@@ -86,7 +90,7 @@ class Address extends Model
      */
     public function getCity()
     {
-        return $this->city;
+        return $this->city !== null ? $this->city : $this->setCity("")->getCity();
     }
 
     /**
@@ -104,7 +108,7 @@ class Address extends Model
      */
     public function getState()
     {
-        return $this->state;
+        return $this->state !== null ? $this->state : $this->setState("")->getState();
     }
 
     /**
@@ -122,7 +126,7 @@ class Address extends Model
      */
     public function getZip()
     {
-        return $this->zip;
+        return $this->zip !== null ? $this->zip : $this->setZip("")->getZip();
     }
 
     /**

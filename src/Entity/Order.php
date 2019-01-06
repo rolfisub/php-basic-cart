@@ -62,7 +62,7 @@ class Order extends Model
      */
     public function getCustomer(): Customer
     {
-        return $this->customer;
+        return $this->customer ? $this->customer : $this->setCustomer(new Customer())->getCustomer();
     }
 
     /**
@@ -108,7 +108,7 @@ class Order extends Model
      */
     public function getShippingAddress(): Address
     {
-        return $this->shippingAddress;
+        return $this->shippingAddress ? $this->shippingAddress : $this->setShippingAddress(new Address())->getShippingAddress();
     }
 
     /**
@@ -126,7 +126,7 @@ class Order extends Model
      */
     public function getBillingAddress(): Address
     {
-        return $this->billingAddress;
+        return $this->billingAddress ? $this->billingAddress : $this->setBillingAddress(new Address())->getBillingAddress();
     }
 
     /**
@@ -144,7 +144,7 @@ class Order extends Model
      */
     public function getTax(): float
     {
-        return $this->tax;
+        return $this->tax ? $this->tax : 0.0;
     }
 
     /**
@@ -162,7 +162,7 @@ class Order extends Model
      */
     public function getSubTotal(): float
     {
-        return $this->subTotal;
+        return $this->subTotal ? $this->subTotal : 0.0;
     }
 
     /**
@@ -180,7 +180,7 @@ class Order extends Model
      */
     public function getTotal(): float
     {
-        return $this->total;
+        return $this->total ? $this->total : 0.0;
     }
 
     /**
