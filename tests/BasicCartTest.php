@@ -1,5 +1,8 @@
 <?php
 
+include "src/Register.php";
+
+
 use PHPUnit\Framework\TestCase;
 
 
@@ -19,5 +22,13 @@ class BasicCartTest extends TestCase
         $this->assertTrue(is_object($var));
         unset($var);
     }
+
+    /* public function testSomething()
+     {
+         $o = new \Rolfisub\BasicCart\BasicCart();
+
+
+         $o->getModel();
+     }*/
 
 }

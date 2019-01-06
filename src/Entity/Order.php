@@ -94,6 +94,16 @@ class Order extends Model
     }
 
     /**
+     * @param Item $i
+     * @return $this
+     */
+    public function addItem(Item $i)
+    {
+        array_push($this->items, $i);
+        return $this;
+    }
+
+    /**
      * @return Address
      */
     public function getShippingAddress(): Address

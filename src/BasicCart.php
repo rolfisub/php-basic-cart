@@ -3,17 +3,41 @@
 namespace Rolfisub\BasicCart;
 
 
+use Rolfisub\BasicCart\Entity\Model;
 use Rolfisub\BasicCart\Entity\Order;
 
-class BasicCart
+class BasicCart extends Model
 {
     /**
      * @var Order
      */
     private $order;
 
-    public function __construct()
+    public function getModel(): array
     {
+        return [
+            "id" => $this->getId(),
+            "order" => $this->getOrder()->getModel()
+        ];
     }
+
+    /**
+     * @return Order
+     */
+    public function getOrder(): Order
+    {
+        return $this->order;
+    }
+
+    /**
+     * @param Order $order
+     * @return $this
+     */
+    public function setOrder(Order $order)
+    {
+        $this->order = $order;
+        return $this;
+    }
+
 
 }
