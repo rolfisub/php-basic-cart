@@ -2,42 +2,18 @@
 
 namespace Rolfisub\BasicCart;
 
+
+use Rolfisub\BasicCart\Entity\Order;
+
 class BasicCart
 {
-    private $customer;
-    private $items = [];
-
     /**
-     * @return mixed
+     * @var Order
      */
-    public function getCustomer()
-    {
-        return $this->customer;
-    }
+    private $order;
 
-    /**
-     * @param mixed $customer
-     */
-    public function setCustomer($customer): void
+    public function __construct()
     {
-        $this->customer = $customer;
     }
-
-    /**
-     * @return array
-     */
-    public function getItems(): array
-    {
-        return $this->items;
-    }
-
-    /**
-     * @param array $items
-     */
-    public function setItems(array $items): void
-    {
-        $this->items = $items;
-    }
-
 
 }

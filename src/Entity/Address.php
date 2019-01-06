@@ -16,6 +16,7 @@ class Address extends Model
     private $city;
     private $state;
     private $zip;
+    private $country;
 
     public function getModel(): array
     {
@@ -25,8 +26,25 @@ class Address extends Model
             "address_2" => $this->getAddress2(),
             "city" => $this->getCity(),
             "state" => $this->getState(),
-            "zip" => $this->getZip()
+            "zip" => $this->getZip(),
+            "country" => $this->getCountry()
         ];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param mixed $country
+     */
+    public function setCountry($country): void
+    {
+        $this->country = $country;
     }
 
     /**
