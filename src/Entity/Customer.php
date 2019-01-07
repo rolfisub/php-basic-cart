@@ -11,9 +11,36 @@ namespace Rolfisub\BasicCart\Entity;
 
 class Customer extends Model
 {
+    /**
+     * @var string
+     */
     private $first_name;
+    /**
+     * @var string
+     */
     private $last_name;
+    /**
+     * @var Address
+     */
     private $address;
+
+    /**
+     * Customer constructor.
+     * @param string $first_name
+     * @param string $last_name
+     * @param Address $address
+     */
+    public function __construct(
+        string $first_name = null,
+        string $last_name = null,
+        Address $address = null
+    )
+    {
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
+        $this->address = $address;
+    }
+
 
     /**
      * @return array

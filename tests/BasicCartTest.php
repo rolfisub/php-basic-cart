@@ -2,6 +2,11 @@
 
 include "src/Register.php";
 
+use Rolfisub\BasicCart\Entity\Address;
+use Rolfisub\BasicCart\Entity\Customer;
+use Rolfisub\BasicCart\Entity\Item;
+use Rolfisub\BasicCart\Entity\Order;
+use Rolfisub\BasicCart\BasicCart;
 
 use PHPUnit\Framework\TestCase;
 
@@ -18,17 +23,20 @@ class BasicCartTest extends TestCase
      */
     public function testIsThereAnySyntaxError()
     {
-        $var = new \Rolfisub\BasicCart\BasicCart();
+        $var = new BasicCart();
         $this->assertTrue(is_object($var));
         unset($var);
     }
 
     public function testSomething()
     {
-        $o = new \Rolfisub\BasicCart\BasicCart();
-        $o->setOrder(new \Rolfisub\BasicCart\Entity\Order());
+        $o = new BasicCart(
+            new Order(
 
-        var_dump(json_encode($o->getModel()));
+            )
+        );
+
+        var_dump(json_encode($o->getModel(), JSON_PRETTY_PRINT));
     }
 
 }

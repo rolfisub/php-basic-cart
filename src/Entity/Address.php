@@ -11,13 +11,61 @@ namespace Rolfisub\BasicCart\Entity;
 
 class Address extends Model
 {
+    /**
+     * @var string
+     */
     private $address_1;
+    /**
+     * @var string
+     */
     private $address_2;
+    /**
+     * @var string
+     */
     private $city;
+    /**
+     * @var string
+     */
     private $state;
+    /**
+     * @var string
+     */
     private $zip;
+    /**
+     * @var string
+     */
     private $country;
 
+    /**
+     * Address constructor.
+     * @param string $address_1
+     * @param string $address_2
+     * @param string $city
+     * @param string $state
+     * @param string $zip
+     * @param string $country
+     */
+    public function __construct(
+        string $address_1 = null,
+        string $address_2 = null,
+        string $city = null,
+        string $state = null,
+        string $zip = null,
+        string $country = null
+    )
+    {
+        $this->address_1 = $address_1;
+        $this->address_2 = $address_2;
+        $this->city = $city;
+        $this->state = $state;
+        $this->zip = $zip;
+        $this->country = $country;
+    }
+
+
+    /**
+     * @return array
+     */
     public function getModel(): array
     {
         return [

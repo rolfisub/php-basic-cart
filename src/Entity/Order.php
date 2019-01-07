@@ -41,6 +41,36 @@ class Order extends Model
     private $total;
 
     /**
+     * Order constructor.
+     * @param Customer $customer
+     * @param array $items
+     * @param Address $shippingAddress
+     * @param Address $billingAddress
+     * @param float $tax
+     * @param float $subTotal
+     * @param float $total
+     */
+    public function __construct(
+        Customer $customer = null,
+        array $items = [],
+        Address $shippingAddress = null,
+        Address $billingAddress = null,
+        float $tax = null,
+        float $subTotal = null,
+        float $total = null
+    )
+    {
+        $this->customer = $customer;
+        $this->items = $items;
+        $this->shippingAddress = $shippingAddress;
+        $this->billingAddress = $billingAddress;
+        $this->tax = $tax;
+        $this->subTotal = $subTotal;
+        $this->total = $total;
+    }
+
+
+    /**
      * @return array
      */
     public function getModel(): array

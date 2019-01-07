@@ -13,6 +13,18 @@ class BasicCart extends Model
      */
     private $order;
 
+    /**
+     * BasicCart constructor.
+     * @param Order $order
+     */
+    public function __construct(
+        Order $order = null
+    )
+    {
+        $this->order = $order;
+    }
+
+
     public function getModel(): array
     {
         return [
@@ -26,7 +38,7 @@ class BasicCart extends Model
      */
     public function getOrder()
     {
-        return $this->order;
+        return $this->order ? $this->order : $this->setOrder(new Order())->getOrder();
     }
 
     /**

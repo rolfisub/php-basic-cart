@@ -11,9 +11,36 @@ namespace Rolfisub\BasicCart\Entity;
 
 class Item extends Model
 {
+    /**
+     * @var string
+     */
     private $name;
+    /**
+     * @var integer
+     */
     private $quantity;
+    /**
+     * @var float
+     */
     private $price;
+
+    /**
+     * Item constructor.
+     * @param string $name
+     * @param int $quantity
+     * @param float $price
+     */
+    public function __construct(
+        string $name = null,
+        int $quantity = null,
+        float $price = null
+    )
+    {
+        $this->name = $name;
+        $this->quantity = $quantity;
+        $this->price = $price;
+    }
+
 
     /**
      * @return array
