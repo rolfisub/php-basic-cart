@@ -28,15 +28,4 @@ class BasicCartTest extends TestCase
         unset($var);
     }
 
-    public function testSomething()
-    {
-        $o = new BasicCart(
-            new Order(
-
-            )
-        );
-
-        var_dump(json_encode($o->getModel(), JSON_PRETTY_PRINT));
-    }
-
 }

@@ -11,12 +11,15 @@ namespace Rolfisub\BasicCart\Entity;
 
 abstract class Model
 {
+    /**
+     * @var integer
+     */
     private $id;
 
     /**
      * @return mixed
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id !== null ? $this->id : $this->setId(0)->getId();
     }
@@ -25,7 +28,7 @@ abstract class Model
      * @param $id
      * @return $this
      */
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
         return $this;
